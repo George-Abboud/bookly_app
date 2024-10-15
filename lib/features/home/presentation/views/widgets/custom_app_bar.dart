@@ -9,20 +9,24 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: kHorizontalPadding, vertical: 32),
+      padding: const EdgeInsets.only(
+        left: kHorizontalPadding,
+        right: kHorizontalPadding,
+        top: 40,
+        bottom: 32,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SvgPicture.asset(
             AssetsData.logo,
-            height: 24,
+            height: 28,
           ),
           IconButton(
-            padding: EdgeInsets.zero,
             onPressed: () {},
             icon: SvgPicture.asset(
               AssetsData.searchIcon,
+              height: 28,
             ),
           ),
         ],
