@@ -3,6 +3,7 @@ import 'package:bookly_app/core/assets.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
@@ -37,9 +38,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo),
+        SvgPicture.asset(
+          AssetsData.logo,
+          height: 72,
+        ),
         const SizedBox(
-          height: 4,
+          height: 8,
         ),
         SlidingText(slidingAnimation: slidingAnimation),
       ],
@@ -47,8 +51,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void initSlidingAnimation() {
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 1500));
     slidingAnimation = Tween(begin: const Offset(0, 3), end: Offset.zero)
         .animate(animationController);
     animationController.forward();
@@ -56,7 +60,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateHomeView() {
     Future.delayed(
-      const Duration(seconds: 5),
+      const Duration(milliseconds: 2500),
       () {
         Get.to(() => const HomeView(),
             transition: Transition.fade, duration: kTransitionDuration);
