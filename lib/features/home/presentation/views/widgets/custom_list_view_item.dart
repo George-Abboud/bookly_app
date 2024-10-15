@@ -1,13 +1,13 @@
 import 'package:bookly_app/core/assets.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedItem extends StatelessWidget {
-  const FeaturedItem({super.key, required this.padding});
-  final EdgeInsetsGeometry padding;
+class CustomListViewItem extends StatelessWidget {
+  const CustomListViewItem({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: padding,
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * .25,
       child: AspectRatio(
         aspectRatio: 0.65,
         child: Container(
