@@ -40,25 +40,61 @@ class BestSellerListViewItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: SizedBox(
-        height: 128,
+        height: 144,
         child: Row(
           children: [
             const ImageItem(),
-            Padding(
-              padding: const EdgeInsets.only(left: 24),
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * .5,
-                    child: Text(
-                      'Harry Potter and the Goblet of Fire',
-                      style: Styles.textStyle20
-                          .copyWith(fontFamily: kGTSectraFine),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: kHorizontalPadding),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .5,
+                      child: Text(
+                        'Harry Potter and the Goblet of Fire',
+                        style: Styles.textStyle20
+                            .copyWith(fontFamily: kGTSectraFine),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      'J.K. Rowling',
+                      style: Styles.textStyle14
+                          .copyWith(color: Colors.white.withOpacity(.7)),
+                    ),
+                    const Spacer(),
+                    Row(
+                      children: [
+                        Text(
+                          '19.99 €',
+                          style: Styles.textStyle20
+                              .copyWith(fontWeight: FontWeight.w700),
+                        ),
+                        const Spacer(),
+                        const Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 18,
+                        ),
+                        const Text(
+                          '4.8 ',
+                          style: Styles.textStyle16,
+                        ),
+                        Text(
+                          '(2543)',
+                          style: Styles.textStyle14
+                              .copyWith(color: Colors.white.withOpacity(.5)),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             )
           ],
@@ -76,11 +112,10 @@ class ImageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 0.6,
+      aspectRatio: 0.65,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Colors.red,
           image: const DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(AssetsData.testImage),
