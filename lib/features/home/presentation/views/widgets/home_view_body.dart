@@ -43,20 +43,46 @@ class BestSellerListViewItem extends StatelessWidget {
         height: 128,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 0.6,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.red,
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.testImage),
-                  ),
-                ),
+            const ImageItem(),
+            Padding(
+              padding: const EdgeInsets.only(left: 24),
+              child: Column(
+                children: [
+                  SizedBox(
+                      width: MediaQuery.of(context).size.width * .5,
+                      child: const Text(
+                        'Harry Potter and the Goblet of Fire',
+                        style: Styles.textStyle20,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ))
+                ],
               ),
-            ),
+            )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class ImageItem extends StatelessWidget {
+  const ImageItem({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 0.6,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.red,
+          image: const DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage(AssetsData.testImage),
+          ),
         ),
       ),
     );
