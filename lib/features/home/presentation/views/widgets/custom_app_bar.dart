@@ -1,5 +1,5 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/core/assets.dart';
+import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
