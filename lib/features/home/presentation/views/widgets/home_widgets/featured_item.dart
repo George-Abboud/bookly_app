@@ -1,6 +1,6 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/play_button.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/play_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
