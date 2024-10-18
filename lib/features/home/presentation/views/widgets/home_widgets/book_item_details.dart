@@ -3,8 +3,8 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerItemDetails extends StatelessWidget {
-  const BestSellerItemDetails({
+class BookItemDetails extends StatelessWidget {
+  const BookItemDetails({
     super.key,
   });
 

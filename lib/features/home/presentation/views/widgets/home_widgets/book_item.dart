@@ -1,10 +1,10 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/best_seller_list_view_details.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/book_item_details.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/image_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookItem extends StatelessWidget {
+  const BookItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BestSellerListViewItem extends StatelessWidget {
             SizedBox(
               width: 24,
             ),
-            BestSellerItemDetails()
+            BookItemDetails()
           ],
         ),
       ),

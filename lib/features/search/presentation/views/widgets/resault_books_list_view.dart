@@ -1,8 +1,8 @@
 import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/book_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerItems extends StatelessWidget {
-  const BestSellerItems({super.key});
+class ResaultBooks extends StatelessWidget {
+  const ResaultBooks({super.key});
 
   @override
   Widget build(BuildContext context) {
