@@ -22,9 +22,9 @@ class FeaturedBooksListView extends StatelessWidget {
 
   EdgeInsets formatPadding(int index) {
     return index == 0
-        ? const EdgeInsets.only(left: 24, right: 4)
+        ? const EdgeInsets.only(left: 24, right: 8)
         : index == 29
-            ? const EdgeInsets.only(left: 4, right: 24)
-            : const EdgeInsets.symmetric(horizontal: 4);
+            ? const EdgeInsets.only(left: 8, right: 24)
+            : const EdgeInsets.symmetric(horizontal: 8);
   }
 }
