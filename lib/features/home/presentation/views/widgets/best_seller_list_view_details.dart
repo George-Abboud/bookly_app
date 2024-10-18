@@ -23,9 +23,6 @@ class BestSellerItemDetails extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const SizedBox(
-            height: 4,
-          ),
           Text(
             'J.K. Rowling',
             style: Styles.textStyle14.copyWith(
