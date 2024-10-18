@@ -11,7 +11,7 @@ class BestSellerListViewItem extends StatelessWidget {
     return const Padding(
       padding: kHorizontalPadding,
       child: SizedBox(
-        height: 136,
+        height: 144,
         child: Row(
           children: [
             ImageItem(),

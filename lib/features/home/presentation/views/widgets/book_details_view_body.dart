@@ -1,4 +1,6 @@
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/image_item.dart';
 import 'package:flutter/material.dart';
 
@@ -16,11 +18,31 @@ class BookDetailsViewBody extends StatelessWidget {
             children: [
               const CustomBookDetailsAppBar(),
               const SizedBox(
-                height: 32,
+                height: 16,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * .17),
+                padding: EdgeInsets.symmetric(horizontal: width * .18),
                 child: const ImageItem(),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              Text(
+                'Harry Potter',
+                style: Styles.textStyle30.copyWith(fontFamily: kGTSectraFine),
+              ),
+              Text(
+                'David Martin',
+                style: Styles.textStyle18.copyWith(
+                  fontStyle: FontStyle.italic,
+                  color: Colors.white.withOpacity(.7),
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              const BookRating(
+                mainAxisAlignment: MainAxisAlignment.center,
               ),
             ],
           ),

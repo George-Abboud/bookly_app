@@ -30,7 +30,16 @@ class BestSellerItemDetails extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          const BookRating(),
+          Row(
+            children: [
+              Text(
+                '19.99 €',
+                style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w700),
+              ),
+              const Spacer(),
+              const BookRating(),
+            ],
+          ),
         ],
       ),
     );

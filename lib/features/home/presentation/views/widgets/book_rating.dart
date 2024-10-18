@@ -4,17 +4,15 @@ import 'package:flutter/material.dart';
 class BookRating extends StatelessWidget {
   const BookRating({
     super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
   });
 
+  final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
-        Text(
-          '19.99 €',
-          style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w700),
-        ),
-        const Spacer(),
         const Icon(
           Icons.star,
           color: Colors.yellow,
