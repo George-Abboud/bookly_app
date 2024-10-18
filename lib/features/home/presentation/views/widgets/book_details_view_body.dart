@@ -1,6 +1,8 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/image_item.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +27,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 child: const ImageItem(),
               ),
               const SizedBox(
-                height: 24,
+                height: 16,
               ),
               Text(
                 'Harry Potter',
@@ -44,37 +46,14 @@ class BookDetailsViewBody extends StatelessWidget {
               const BookRating(
                 mainAxisAlignment: MainAxisAlignment.center,
               ),
+              const SizedBox(
+                height: 16,
+              ),
+              const BookAction(),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomBookDetailsAppBar extends StatelessWidget {
-  const CustomBookDetailsAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.close,
-            size: 32,
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.shopping_cart_outlined,
-            size: 32,
-          ),
-        ),
-      ],
     );
   }
 }
