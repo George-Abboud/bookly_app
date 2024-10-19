@@ -1,6 +1,6 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/book_item_details.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/image_item.dart';
+import 'package:bookly_app/core/widgets/book_item_details.dart';
+import 'package:bookly_app/core/widgets/image_item.dart';
 import 'package:flutter/material.dart';
 
 class BookItem extends StatelessWidget {
@@ -18,7 +18,7 @@ class BookItem extends StatelessWidget {
             SizedBox(
               width: 24,
             ),
-            BookItemDetails()
+            BookItemDetails(),
           ],
         ),
       ),
