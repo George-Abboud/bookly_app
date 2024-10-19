@@ -15,12 +15,12 @@ class SearchTextField extends StatelessWidget {
       cursorColor: Colors.white,
       decoration: InputDecoration(
         focusColor: Colors.white,
-        contentPadding: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
+        contentPadding: const EdgeInsets.only(left: 24, top: 8, bottom: 8),
         hintText: 'Search',
         hintStyle: TextStyle(
             color: Colors.white.withOpacity(.5), fontWeight: FontWeight.normal),
         suffixIcon: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(

@@ -10,6 +10,7 @@ class PlayButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Container(
