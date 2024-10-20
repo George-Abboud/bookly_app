@@ -17,10 +17,10 @@ class NewestBooksBuilder extends StatelessWidget {
             books: state.books,
           );
         } else if (state is NewestBooksFailure) {
-          return SliverToBoxAdapter(
+          return SliverFillRemaining(
               child: CustomError(errorMessage: state.errorMessage));
         } else {
-          return const SliverToBoxAdapter(child: CustomProgressIndicator());
+          return const SliverFillRemaining(child: CustomProgressIndicator());
         }
       },
     );

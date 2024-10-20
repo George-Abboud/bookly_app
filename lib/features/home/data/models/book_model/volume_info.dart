@@ -7,7 +7,7 @@ import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
   final String title;
-  final List<String> authors;
+  final List<String>? authors;
   final String? publisher;
   final String? publishedDate;
   final String? description;
@@ -54,7 +54,7 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
       title: json['title'] as String,
-      authors: (json['authors'] as List<dynamic>).cast<String>(),
+      authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
       publisher: json['publisher'] as String?,
       publishedDate: json['publishedDate'] as String?,
       description: json['description'] as String?,

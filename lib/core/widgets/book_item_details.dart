@@ -28,7 +28,7 @@ class BookItemDetails extends StatelessWidget {
             ),
           ),
           Text(
-            book.volumeInfo.authors[0],
+            book.volumeInfo.authors?[0] ?? 'unknown',
             style: Styles.textStyle12.copyWith(
               color: Colors.white.withOpacity(.7),
             ),
