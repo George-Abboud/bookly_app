@@ -23,7 +23,7 @@ class SearchViewBody extends StatelessWidget {
                 padding: kHorizontalPadding,
                 child: Text(
                   'Search Resault',
-                  style: Styles.textStyle18,
+                  style: Styles.textStyle16,
                 ),
               ),
               SizedBox(

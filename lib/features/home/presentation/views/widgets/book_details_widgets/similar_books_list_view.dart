@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/widgets/image_item.dart';
 import 'package:flutter/material.dart';
 
 class SimilarBooksListView extends StatelessWidget {
@@ -12,9 +11,9 @@ class SimilarBooksListView extends StatelessWidget {
         itemCount: 30,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return ImageItem(
-            padding: formatPadding(index),
-          );
+          // return ImageItem(
+          //   padding: formatPadding(index),
+          // );
         },
       ),
     );

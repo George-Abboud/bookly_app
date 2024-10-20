@@ -6,8 +6,8 @@ import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
-  final String? title;
-  final List<String>? authors;
+  final String title;
+  final List<String> authors;
   final String? publisher;
   final String? publishedDate;
   final String? description;
@@ -25,10 +25,12 @@ class VolumeInfo extends Equatable {
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
+  final int? averageRating;
+  final int? ratingsCount;
 
   const VolumeInfo({
-    this.title,
-    this.authors,
+    required this.title,
+    required this.authors,
     this.publisher,
     this.publishedDate,
     this.description,
@@ -46,38 +48,42 @@ class VolumeInfo extends Equatable {
     this.previewLink,
     this.infoLink,
     this.canonicalVolumeLink,
+    this.averageRating,
+    this.ratingsCount,
   });
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
-        title: json['title'] as String?,
-        authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
-        publisher: json['publisher'] as String?,
-        publishedDate: json['publishedDate'] as String?,
-        description: json['description'] as String?,
-        industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
-            ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
-            .toList(),
-        readingModes: json['readingModes'] == null
-            ? null
-            : ReadingModes.fromJson(
-                json['readingModes'] as Map<String, dynamic>),
-        pageCount: json['pageCount'] as int?,
-        printType: json['printType'] as String?,
-        categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
-        maturityRating: json['maturityRating'] as String?,
-        allowAnonLogging: json['allowAnonLogging'] as bool?,
-        contentVersion: json['contentVersion'] as String?,
-        panelizationSummary: json['panelizationSummary'] == null
-            ? null
-            : PanelizationSummary.fromJson(
-                json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: json['imageLinks'] =
-            ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
-        language: json['language'] as String?,
-        previewLink: json['previewLink'] as String?,
-        infoLink: json['infoLink'] as String?,
-        canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
-      );
+      title: json['title'] as String,
+      authors: (json['authors'] as List<dynamic>).cast<String>(),
+      publisher: json['publisher'] as String?,
+      publishedDate: json['publishedDate'] as String?,
+      description: json['description'] as String?,
+      industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
+          ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      readingModes: json['readingModes'] == null
+          ? null
+          : ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
+      pageCount: json['pageCount'] as int?,
+      printType: json['printType'] as String?,
+      categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
+      maturityRating: json['maturityRating'] as String?,
+      allowAnonLogging: json['allowAnonLogging'] as bool?,
+      contentVersion: json['contentVersion'] as String?,
+      panelizationSummary: json['panelizationSummary'] == null
+          ? null
+          : PanelizationSummary.fromJson(
+              json['panelizationSummary'] as Map<String, dynamic>),
+      imageLinks: json['imageLinks'] =
+          ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+      language: json['language'] as String?,
+      previewLink: json['previewLink'] as String?,
+      infoLink: json['infoLink'] as String?,
+      canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
+      averageRating:
+          json['averageRating'] == null ? 0 : json['averageRating'] as int,
+      ratingsCount:
+          json['ratingsCount'] == null ? 0 : json['ratingsCount'] as int);
 
   Map<String, dynamic> toJson() => {
         'title': title,

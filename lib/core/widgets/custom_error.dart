@@ -9,7 +9,7 @@ class CustomError extends StatelessWidget {
     return Center(
       child: Text(
         errorMessage,
-        style: Styles.textStyle14.copyWith(color: Colors.red),
+        style: Styles.textStyle12.copyWith(color: Colors.red),
       ),
     );
   }

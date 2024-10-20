@@ -15,7 +15,7 @@ class SimilarBooksSection extends StatelessWidget {
           padding: kHorizontalPadding,
           child: Text(
             'You can also like',
-            style: Styles.textStyle16,
+            style: Styles.textStyle14,
           ),
         ),
         SizedBox(

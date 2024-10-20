@@ -1,6 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/best_seller_items.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/newest_books_builder.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/featured_book_builder.dart';
 import 'package:flutter/material.dart';
@@ -22,13 +22,13 @@ class HomeViewBody extends StatelessWidget {
               ),
               FeaturedBookBuilder(),
               SizedBox(
-                height: 32,
+                height: 64,
               ),
               Padding(
                 padding: kHorizontalPadding,
                 child: Text(
-                  'Best Seller',
-                  style: Styles.textStyle18,
+                  'Newest',
+                  style: Styles.textStyle16,
                 ),
               ),
               SizedBox(
@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        BestSellerItems(),
+        NewestBooksBuilder(),
       ],
     );
   }

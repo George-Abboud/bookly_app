@@ -11,7 +11,7 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: Styles.textStyle16,
+      style: Styles.textStyle14,
       cursorColor: Colors.white,
       decoration: InputDecoration(
         focusColor: Colors.white,
