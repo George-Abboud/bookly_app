@@ -31,7 +31,7 @@ class FeaturedItem extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: const PlayButton(),
             ),
-            imageUrl: book.volumeInfo.imageLinks.thumbnail,
+            imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
             errorWidget: (context, url, error) => Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white, width: .1),

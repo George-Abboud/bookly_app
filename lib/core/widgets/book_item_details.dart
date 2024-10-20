@@ -32,6 +32,8 @@ class BookItemDetails extends StatelessWidget {
             style: Styles.textStyle12.copyWith(
               color: Colors.white.withOpacity(.7),
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(
             height: 32,

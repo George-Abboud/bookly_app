@@ -20,12 +20,12 @@ class VolumeInfo extends Equatable {
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks imageLinks;
+  final ImageLinks? imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
-  final int? averageRating;
+  final num? averageRating;
   final int? ratingsCount;
 
   const VolumeInfo({
@@ -74,14 +74,14 @@ class VolumeInfo extends Equatable {
           ? null
           : PanelizationSummary.fromJson(
               json['panelizationSummary'] as Map<String, dynamic>),
-      imageLinks: json['imageLinks'] =
-          ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+      imageLinks: json['imageLinks'] == null
+          ? null
+          : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
       language: json['language'] as String?,
       previewLink: json['previewLink'] as String?,
       infoLink: json['infoLink'] as String?,
       canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
-      averageRating:
-          json['averageRating'] == null ? 0 : json['averageRating'] as int,
+      averageRating: json['averageRating'] ?? 0,
       ratingsCount:
           json['ratingsCount'] == null ? 0 : json['ratingsCount'] as int);
 
@@ -101,7 +101,7 @@ class VolumeInfo extends Equatable {
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
         'panelizationSummary': panelizationSummary?.toJson(),
-        'imageLinks': imageLinks.toJson(),
+        'imageLinks': imageLinks?.toJson(),
         'language': language,
         'previewLink': previewLink,
         'infoLink': infoLink,

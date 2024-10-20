@@ -16,7 +16,7 @@ class BookItem extends StatelessWidget {
         child: Row(
           children: [
             ImageItem(
-              image: book.volumeInfo.imageLinks.thumbnail,
+              image: book.volumeInfo.imageLinks?.thumbnail ?? '',
             ),
             const SizedBox(
               width: 24,
