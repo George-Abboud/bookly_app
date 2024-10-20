@@ -1,12 +1,13 @@
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/play_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class FeaturedItem extends StatelessWidget {
-  const FeaturedItem({super.key, required this.padding});
+  const FeaturedItem({super.key, required this.padding, required this.book});
   final EdgeInsetsGeometry padding;
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,9 +21,9 @@ class FeaturedItem extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(AssetsData.testImage),
+                image: NetworkImage(book.volumeInfo.imageLinks.thumbnail),
               ),
             ),
             alignment: Alignment.bottomRight,
