@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/widgets/custom_error.dart';
-import 'package:bookly_app/core/widgets/custom_progress_indicator.dart';
+import 'package:bookly_app/core/utils/widgets/custom_error.dart';
+import 'package:bookly_app/core/utils/widgets/custom_progress_indicator.dart';
 import 'package:bookly_app/features/home/presentation/manager/cubits/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/home_widgets/featured_books_list_view.dart';
 import 'package:flutter/material.dart';
