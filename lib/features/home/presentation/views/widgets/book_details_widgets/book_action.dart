@@ -8,25 +8,37 @@ class BookAction extends StatelessWidget {
   final BookModel book;
   @override
   Widget build(BuildContext context) {
+    final bool absorbingPreview = getAbsorb(book.volumeInfo.previewLink);
+    final bool absorbingDownload =
+        getAbsorb(book.accessInfo?.pdf?.acsTokenLink);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         children: [
-          const CustomButton(
-            text: 'Download',
-            backgroundColor: Colors.white,
+          CustomButton(
+            absorbing: absorbingDownload,
+            onPressed: () {
+              launchCustomUrl(context, book.accessInfo?.pdf?.acsTokenLink);
+            },
+            text: !absorbingDownload ? 'Download' : 'Un Available',
+            backgroundColor: !absorbingDownload
+                ? Colors.white
+                : Colors.white.withOpacity(0.5),
             textColor: Colors.black,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(12),
               topLeft: Radius.circular(12),
             ),
           ),
           CustomButton(
-            onPressed: () async {
+            absorbing: absorbingPreview,
+            onPressed: () {
               launchCustomUrl(context, book.volumeInfo.previewLink);
             },
-            text: getText(book),
-            backgroundColor: const Color(0xffEF8262),
+            text: !absorbingPreview ? 'Preview' : 'Un Available',
+            backgroundColor: !absorbingPreview
+                ? const Color(0xffEF8262)
+                : const Color(0x88EF8262),
             textColor: Colors.white,
             borderRadius: const BorderRadius.only(
               bottomRight: Radius.circular(12),
@@ -39,11 +51,5 @@ class BookAction extends StatelessWidget {
     );
   }
 
-  String getText(BookModel book) {
-    if (book.volumeInfo.previewLink == null) {
-      return 'Un Availabe';
-    } else {
-      return 'Preview';
-    }
-  }
+  bool getAbsorb(String? url) => url == null ? true : false;
 }

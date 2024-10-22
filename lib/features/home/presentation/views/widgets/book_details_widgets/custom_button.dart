@@ -10,6 +10,7 @@ class CustomButton extends StatelessWidget {
     required this.borderRadius,
     this.fontSize,
     this.onPressed,
+    required this.absorbing,
   });
   final String text;
   final Color backgroundColor;
@@ -17,20 +18,24 @@ class CustomButton extends StatelessWidget {
   final BorderRadiusGeometry borderRadius;
   final double? fontSize;
   final void Function()? onPressed;
+  final bool absorbing;
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: SizedBox(
-        height: 48,
-        child: TextButton(
-          onPressed: onPressed,
-          style: TextButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: borderRadius),
-              backgroundColor: backgroundColor),
-          child: Text(
-            text,
-            style: Styles.textStyle16
-                .copyWith(color: textColor, fontSize: fontSize),
+      child: AbsorbPointer(
+        absorbing: absorbing,
+        child: SizedBox(
+          height: 48,
+          child: TextButton(
+            onPressed: onPressed,
+            style: TextButton.styleFrom(
+                shape: RoundedRectangleBorder(borderRadius: borderRadius),
+                backgroundColor: backgroundColor),
+            child: Text(
+              text,
+              style: Styles.textStyle14
+                  .copyWith(color: textColor, fontSize: fontSize),
+            ),
           ),
         ),
       ),
