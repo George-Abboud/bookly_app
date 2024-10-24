@@ -1,6 +1,8 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/search/presentation/manager/cubits/search_books_cubit/search_books_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SearchTextField extends StatelessWidget {
@@ -11,6 +13,10 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (data) {
+        BlocProvider.of<SearchBooksCubit>(context)
+            .searchBooks(searchBooks: data);
+      },
       style: Styles.textStyle14,
       cursorColor: Colors.white,
       decoration: InputDecoration(

@@ -20,10 +20,13 @@ class SearchRepoImpl implements SearchRepo {
               'volumes?Filtering=free-ebooks&q=subject:$searchBooks&Sorting=newest');
 
       List<BookModel> books = [];
-      for (var item in data['items']) {
-        books.add(
-          BookModel.fromJson(item),
-        );
+
+      if (data['items'] != null) {
+        for (var item in data['items']) {
+          books.add(
+            BookModel.fromJson(item),
+          );
+        }
       }
 
       return right(books);

@@ -11,7 +11,7 @@ abstract class AppStrings {
       "some thing went wrong, try again later";
   static const strUnknownError = "some thing went wrong, try again later";
   static const strTimeoutError = "time out, try again later";
-  static const strDefaultError = "some thing went wrong, try again later";
+  static const strDefaultError = "Please check your internet connection";
   static const strCacheError = "cache error, try again later";
   static const strNoInternetError = "Please check your internet connection";
   static const strCancelError =
